@@ -11,11 +11,11 @@ with open("note.json", "r") as f:
 while run:
     with sr.Microphone() as sound:
         print("Woking")
-        audio_text = r.listen(sound)
+        audio = r.listen(sound)
         print("Done")
  
         try:
-            text = r.recognize_google(audio_text)
+            text = r.recognize_google(audio,language= 'th')
             r.energy_threshold = 300
             print(json.dumps(data, indent= 4))
 
